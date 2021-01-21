@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <MixxxControllerPreset mixxxVersion="2.2.0+" schemaVersion="1">
     <info>
-        <name>Denon DN SC2000</name>
+        <name>Denon DN-SC2000</name>
         <author>marodere</author>
-        <forums>https://mixxx.discourse.group</forums>
+        <forums>https://mixxx.discourse.group/t/denon-dn-sc2000-v2/21091</forums>
     </info>
     <controller id="DN-SC2000">
         <scriptfiles>
