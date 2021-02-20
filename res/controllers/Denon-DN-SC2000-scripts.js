@@ -236,7 +236,7 @@ DenonDNSC2000.HandleJogTouch = function (channel, control, value, status, group)
     if ((status & 0xF0) === 0x90) {
         var alpha = 1.0/8;
         var beta = alpha/32;
-        engine.scratchEnable(deckNumber, 2048, 33+1/3, alpha, beta);
+        engine.scratchEnable(deckNumber, 2250, 33+1/3, alpha, beta);
     } else {
         engine.scratchDisable(deckNumber);
     }
@@ -251,6 +251,13 @@ DenonDNSC2000.HandleJogTurn = function (channel, control, value, status, group) 
     } else {
         engine.setValue(group, 'jog', newValue);
     }
+};
+
+DenonDNSC2000.HandleBeatSize = function (channel, control, value, status, group) {
+    var key = DenonDNSC2000.shiftPressed ? 'beatjump_size' : 'beatloop_size';
+    var size = engine.getValue(group, key);
+    size = value === 0 ? size * 2 : size / 2;
+    engine.setValue(group, key, size);
 };
 
 DenonDNSC2000.shutdown = function () {
